@@ -20,9 +20,9 @@ app.post('/insert', async (req, res) => {
   const peopleName = req.body.peopleName;
   const gender = req.body.gender;
   const partnerGender = req.body.partnerGender;
-  const whyVolunteer = req.body.whyVolunteer;
   const healthExperience = req.body.healthExperience;
   const partnerExperience = req.body.partnerExperience;
+  const whyVolunteer = req.body.whyVolunteer;
 
   const people = new PeopleModel({
     peopleName: peopleName,
