@@ -10,6 +10,10 @@ const PeopleSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    partnerGender: {
+      type: String,
+      required: true,
+    },
   },
   { timestamps: true }
 );

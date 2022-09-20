@@ -19,8 +19,17 @@ mongoose
 app.post('/insert', async (req, res) => {
   const peopleName = req.body.peopleName;
   const gender = req.body.gender;
+  const partnerGender = req.body.partnerGender;
+  const whyVolunteer = req.body.whyVolunteer;
+  const healthExperience = req.body.healthExperience;
 
-  const people = new PeopleModel({ peopleName: peopleName, gender: gender });
+  const people = new PeopleModel({
+    peopleName: peopleName,
+    gender: gender,
+    partnerGender: partnerGender,
+    whyVolunteer: whyVolunteer,
+    healthExperience: healthExperience,
+  });
 
   try {
     await people.save();
