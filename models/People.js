@@ -18,14 +18,14 @@ const PeopleSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    partnerHealthExperience: {
-      type: String,
-      required: true,
-    },
-    whyVolunteer: {
-      type: String,
-      required: true,
-    },
+    // partnerHealthExperience: {
+    //   type: String,
+    //   required: true,
+    // },
+    // whyVolunteer: {
+    //   type: String,
+    //   required: true,
+    // },
   },
   { timestamps: true }
 );
