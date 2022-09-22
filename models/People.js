@@ -24,7 +24,6 @@ const PeopleSchema = new mongoose.Schema(
     },
     whyVolunteer: {
       type: String,
-      required: true,
     },
   },
   { timestamps: true }
