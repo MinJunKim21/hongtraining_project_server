@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const app = express();
 require('dotenv').config();
+const authRoute = require('./routes/auth');
 
 const PeopleModel = require('./models/People');
 const People = require('./models/People');
@@ -16,6 +17,8 @@ mongoose
   })
   .then(console.log('connected to mongoDB'))
   .catch((err) => console.log(err));
+
+app.use('/server/auth', authRoute);
 
 app.post('/insert', async (req, res) => {
   const peopleName = req.body.peopleName;
