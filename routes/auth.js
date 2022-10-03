@@ -25,10 +25,10 @@ router.post('/register', async (req, res) => {
 router.post('/login', async (req, res) => {
   try {
     const user = await User.findOne({ username: req.body.username });
-    !user && res.status(400).json('Wrong credentials!');
+    !user && res.status(400).json('Wrong credentialsdddd');
 
     const validated = await bcrypt.compare(req.body.password, user.password);
-    !validated && res.status(400).json('Wrong credentials!');
+    !validated && res.status(400).json('Wrong credentialsssss!');
 
     const { password, ...others } = user._doc; //password 숨긴게 user로 넘겨지지 않게 하는 과정. others를 넘기고, 그 안에 _doc에는 패스워드 뺀 data들 사용 가능
     res.status(200).json(others);
