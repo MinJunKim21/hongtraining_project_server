@@ -18,7 +18,7 @@ mongoose
   .then(console.log('connected to mongoDB'))
   .catch((err) => console.log(err));
 
-app.use('/server/auth', authRoute);
+app.use('/', authRoute);
 
 app.post('/insert', async (req, res) => {
   const peopleName = req.body.peopleName;
