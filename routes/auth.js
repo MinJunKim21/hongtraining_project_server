@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt');
 
 //Register
 router.post(
-  'https://hongtrainingbe.herokuapp.com/server/auth//register',
+  'https://hongtrainingbe.herokuapp.com/server/auth/register',
   async (req, res) => {
     try {
       const salt = await bcrypt.genSalt(10);
