@@ -79,15 +79,15 @@ passport.use(
         // doc이 없으면 새로 하나 유저를 저장함
 
         //여기 부분을 켰다 껏다하면 새로운 유저 로그인이  디비에 저장되었다가 아니었다가
-        // if (!doc) {
-        //   const newUsermanager = new Usermanager({
-        //     googleId: profile.id,
-        //     username: profile.name.givenName,
-        //   });
+        if (!doc) {
+          const newUsermanager = new Usermanager({
+            googleId: profile.id,
+            username: profile.name.givenName,
+          });
 
-        //   await newUsermanager.save();
-        //   cb(null, newUsermanager);
-        // }
+          await newUsermanager.save();
+          cb(null, newUsermanager);
+        }
 
         cb(null, doc);
       });
@@ -104,7 +104,7 @@ app.get(
   '/auth/google/callback',
   passport.authenticate('google', {
     failureRedirect: 'https://crople.netlify.app/signinpage',
-    // session: true,
+    session: true,
   }),
   function (req, res) {
     // successful authentication, redirect
