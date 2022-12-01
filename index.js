@@ -182,12 +182,8 @@ app.get('/getuser', (req, res) => {
 
 app.get('/auth/logout', (req, res) => {
   if (req.user) {
-    req.logout(function (err) {
-      if (err) {
-        return next(err);
-      }
-      res.send('done');
-    });
+    req.logout();
+    res.send('done');
   }
 });
 
