@@ -24,7 +24,12 @@ mongoose
 
 //middleware
 app.use(express.json());
-app.use(cors({ origin: 'https://crople.netlify.app', credentials: true }));
+app.use(
+  cors()
+  //   {
+  //   origin: 'https://crople.netlify.app', credentials: true
+  //  }
+);
 
 app.set('trust proxy', 1);
 
