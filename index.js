@@ -104,12 +104,12 @@ app.get(
 app.get(
   '/auth/google/callback',
   passport.authenticate('google', {
-    failureRedirect: 'http://localhost:3000/signinpage',
+    failureRedirect: 'https://crople.netlify.app/signinpage',
     session: true,
   }),
   function (req, res) {
     // successful authentication, redirect
-    res.redirect('http://localhost:3000/manager');
+    res.redirect('https://crople.netlify.app/manager');
   }
 );
 
