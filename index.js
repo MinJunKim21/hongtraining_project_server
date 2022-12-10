@@ -25,6 +25,7 @@ mongoose
 //middleware
 app.use(express.json());
 app.use(cors({ origin: 'https://crople.netlify.app', credentials: true }));
+app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
 
 app.set('trust proxy', 1);
 
@@ -103,12 +104,12 @@ app.get(
 app.get(
   '/auth/google/callback',
   passport.authenticate('google', {
-    failureRedirect: 'https://crople.netlify.app/signinpage',
+    failureRedirect: 'http://localhost:3000/signinpage',
     session: true,
   }),
   function (req, res) {
     // successful authentication, redirect
-    res.redirect('https://crople.netlify.app/manager');
+    res.redirect('http://localhost:3000/manager');
   }
 );
 
